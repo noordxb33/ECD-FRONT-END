@@ -21,7 +21,6 @@ import MailIcon from '@mui/icons-material/Mail';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
-import PrimarySearchAppBar from './PrimarySearchAppBar';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Badge from '@mui/material/Badge';
@@ -31,10 +30,15 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 
+
 const drawerWidth = 230;
 
+
+
+// when you open the drawer this is used for styling 
 const openedMixin = (theme) => ({
   width: drawerWidth,
+  backgroundColor:'red',
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen,
@@ -42,6 +46,7 @@ const openedMixin = (theme) => ({
   overflowX: 'hidden',
 });
 
+// when you close the drawer this is used for styling
 const closedMixin = (theme) => ({
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
@@ -309,6 +314,7 @@ const renderMobileMenu = (
           <Typography variant="h6" noWrap component="div">
             ECD MIS
           </Typography>
+          {/* search Bar */}
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -318,7 +324,9 @@ const renderMobileMenu = (
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+
           <Box sx={{ flexGrow: 1 }} />
+
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
