@@ -29,8 +29,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-
-
+import AddIcon from '@mui/icons-material/Add';
+import GroupsIcon from '@mui/icons-material/Groups';
 const drawerWidth = 230;
 
 
@@ -67,6 +67,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   ...theme.mixins.toolbar,
 }));
 
+
+//this is used for the app bar styling 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
@@ -270,7 +272,7 @@ const renderMobileMenu = (
   const listItems = [
     {
       text: 'Addmission',
-      icon: <InboxIcon />,
+      icon: <GroupsIcon />,
       onClick:()=>setOpenAdmission(!openAdmission),
       state:openAdmission,
       nestedItems: [
