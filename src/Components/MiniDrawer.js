@@ -38,7 +38,6 @@ const drawerWidth = 230;
 // when you open the drawer this is used for styling 
 const openedMixin = (theme) => ({
   width: drawerWidth,
-  backgroundColor:'red',
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen,
