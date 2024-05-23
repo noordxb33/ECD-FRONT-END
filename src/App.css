@@ -39,3 +39,100 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* the cod for thems start from here.... */
+:root {
+  --bg-color: #fff;
+  --headings-color: #000000;
+  --desc-color: #000000;
+  --drawer-bg-color:#fff;
+}
+
+body[data-theme="dark-theme"] {
+  --bg-color: #000000;
+  --headings-color: #fff;
+  --desc-color: #fff;
+  --drawer-bg-color:#310b0b;
+
+}
+
+body[data-theme="sea-theme"] {
+  --bg-color: #5a460d;
+  --headings-color: #96ceb4;
+  --desc-color: #ff9292;
+  --drawer-bg-color:#1afdfdb7;
+
+}
+
+body[data-theme="sharp-theme"] {
+  --bg-color: #ff7777;
+  --headings-color: #a2416b;
+  --desc-color: #852747;
+  --drawer-bg-color:#b9a7a7;
+
+}
+
+body {
+  background: var(--bg-color) !important;
+}
+
+.content-container {
+  margin-top: 5rem;
+}
+
+.hero-section-headings {
+  padding-top: 3rem;
+}
+
+.heroImg {
+  width: 100%;
+  height: 100%;
+}
+
+.hearo-section-title {
+  margin-bottom: 16px;
+  color: var(--headings-color);
+}
+
+.select-theme-heading {
+  color: var(--headings-color);
+}
+
+.hero-section-desc {
+  margin-right: 5rem;
+  color: var(--desc-color);
+}
+
+.select-theme-div .btn {
+  margin-right: 1rem;
+  width: 100px;
+  margin-top: 16px;
+}
+
+#hero-btn1 {
+  background-color: black;
+  border: 1px solid black;
+  box-shadow: none;
+}
+
+#hero-btn2 {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  box-shadow: none;
+}
+
+#hero-btn3 {
+  background-color: #0099cc;
+  border: 1px solid #0099cc;
+  color: white;
+  box-shadow: none;
+}
+
+#hero-btn4 {
+  background-color: #d67d3e;
+  border: 1px solid #d67d3e;
+  color: black;
+  box-shadow: none;
+}

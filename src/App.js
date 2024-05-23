@@ -1,10 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
-import MiniDrawer from './Components/MiniDrawer';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import RouteComponent from './RouteComponent';
+
 function App() {
+
+  
   return (
-    
-    <MiniDrawer/>
+    <BrowserRouter>
+    <Routes>
+
+
+    <Route path="/Gender" element={<RouteComponent element={<>Gender Page</>}/>} exact />
+
+    </Routes>
+    </BrowserRouter>
   );
 }
 
