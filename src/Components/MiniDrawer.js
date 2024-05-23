@@ -5,6 +5,7 @@ import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
+import DeblurIcon from '@mui/icons-material/Deblur';
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
@@ -12,7 +13,9 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import PaletteIcon from '@mui/icons-material/Palette';
 import ListItem from '@mui/material/ListItem';
+import LightModeIcon from '@mui/icons-material/LightMode';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -29,6 +32,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import NightlightIcon from '@mui/icons-material/Nightlight';
 import AddIcon from '@mui/icons-material/Add';
 import GroupsIcon from '@mui/icons-material/Groups';
 const drawerWidth = 230;
@@ -37,6 +41,7 @@ const drawerWidth = 230;
 
 // when you open the drawer this is used for styling 
 const openedMixin = (theme) => ({
+  backgroundColor:'var(--drawer-bg-color)',
   width: drawerWidth,
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
@@ -47,6 +52,7 @@ const openedMixin = (theme) => ({
 
 // when you close the drawer this is used for styling
 const closedMixin = (theme) => ({
+  backgroundColor:'var(--drawer-bg-color)',
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -72,6 +78,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
+  backgroundColor:'var(--bg-color)',
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
@@ -149,9 +156,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 
-export default function MiniDrawer() {
-  const theme = useTheme();
+export default function MiniDrawer(props) {
+  const 
+  
+  theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [dark, setDark] = React.useState(false);
   const [openAdmission, setOpenAdmission] = React.useState(false);
   const [finance, setOpenFinance] = React.useState(false);
 
@@ -329,6 +339,19 @@ const renderMobileMenu = (
           <Box sx={{ flexGrow: 1 }} />
 
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <IconButton size="large" onClick={()=>document.body.setAttribute("data-theme", "sharp-theme")} color="inherit">
+              
+              <DeblurIcon />
+        
+          </IconButton>
+          <IconButton size="large" onClick={()=>document.body.setAttribute("data-theme", "dark-theme")} color="inherit">
+              <NightlightIcon />
+          </IconButton>
+          <IconButton size="large" onClick={()=>document.body.setAttribute("data-theme", "sea-theme")} color="inherit">
+              
+                <LightModeIcon />
+          
+            </IconButton>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
                 <MailIcon />
@@ -411,7 +434,7 @@ const renderMobileMenu = (
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-
+          {props.pageContent}
       </Box>
     </Box>
   );
