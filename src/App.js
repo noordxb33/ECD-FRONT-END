@@ -12,7 +12,7 @@ function App() {
 
 
     <Route path="/Gender" element={<RouteComponent element={<>Gender Page</>}/>} exact />
-
+    
     </Routes>
     </BrowserRouter>
   );
