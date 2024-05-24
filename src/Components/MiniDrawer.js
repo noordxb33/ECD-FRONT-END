@@ -35,12 +35,15 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import NightlightIcon from '@mui/icons-material/Nightlight';
 import AddIcon from '@mui/icons-material/Add';
 import GroupsIcon from '@mui/icons-material/Groups';
+import { SettingsInputAntennaSharp } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 const drawerWidth = 230;
 
 
 
 // when you open the drawer this is used for styling 
 const openedMixin = (theme) => ({
+  color:'var(--desc-color)',
   backgroundColor:'var(--drawer-bg-color)',
   width: drawerWidth,
   transition: theme.transitions.create('width', {
@@ -52,6 +55,7 @@ const openedMixin = (theme) => ({
 
 // when you close the drawer this is used for styling
 const closedMixin = (theme) => ({
+  color:'var(--desc-color)',
   backgroundColor:'var(--drawer-bg-color)',
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
@@ -115,6 +119,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 ////style code for the new App Bar and its Components 
 
 const Search = styled('div')(({ theme }) => ({
+  color:'var(--desc-color)',
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -157,13 +162,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 export default function MiniDrawer(props) {
-  const 
-  
-  theme = useTheme();
+  const changeRoute=useNavigate();
+  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [dark, setDark] = React.useState(false);
   const [openAdmission, setOpenAdmission] = React.useState(false);
   const [finance, setOpenFinance] = React.useState(false);
+  const [settings, setSettings] = React.useState(false);
 
 ///start block of newly inserted code for app bar
 const [anchorEl, setAnchorEl] = React.useState(null);
@@ -206,7 +210,7 @@ const renderMenu = (
     open={isMenuOpen}
     onClose={handleMenuClose}
   >
-    <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+    <MenuItem  onClick={handleMenuClose}>Profile</MenuItem>
     <MenuItem onClick={handleMenuClose}>My account</MenuItem>
   </Menu>
 );
@@ -225,10 +229,11 @@ const renderMobileMenu = (
       vertical: 'top',
       horizontal: 'right',
     }}
+    
     open={isMobileMenuOpen}
     onClose={handleMobileMenuClose}
   >
-    <MenuItem>
+    <MenuItem >
       <IconButton size="large" aria-label="show 4 new mails" color="inherit">
         <Badge badgeContent={4} color="error">
           <MailIcon />
@@ -256,8 +261,8 @@ const renderMobileMenu = (
         aria-haspopup="true"
         color="inherit"
       >
-        <AccountCircle />
-      </IconButton>
+        <AccountCircle  />
+      </IconButton >
       <p>Profile</p>
     </MenuItem>
   </Menu>
@@ -281,12 +286,21 @@ const renderMobileMenu = (
 
   const listItems = [
     {
+      text: 'Home',
+      icon: <GroupsIcon />,
+      onClick:()=>changeRoute('/'),
+      state:null,
+      nestedItems: [
+        // Add more nested items here
+      ],
+    },
+    {
       text: 'Addmission',
       icon: <GroupsIcon />,
       onClick:()=>setOpenAdmission(!openAdmission),
       state:openAdmission,
       nestedItems: [
-        { text: 'Add', icon: <MailIcon />},
+        { text: 'Add', icon: <MailIcon  />,onClick:()=>changeRoute('/Add-Admission')},
         { text: 'List', icon: <MailIcon />}
         // Add more nested items here
       ],
@@ -302,6 +316,19 @@ const renderMobileMenu = (
         // Add more nested items here
       ],
     },
+    {
+      text: 'Accessories',
+      icon: <SettingsInputAntennaSharp />,
+      onClick:()=>setSettings(!settings),
+      state:settings,
+      nestedItems: [
+        { text: 'Gender', icon: <MailIcon />, onClick:()=>changeRoute('/Gender')},
+        { text: 'Year', icon: <MailIcon />, onClick:()=>changeRoute('/Year')},
+        { text: 'Month', icon: <MailIcon />, onClick:()=>changeRoute('/Gender')},
+
+        // Add more nested items here
+      ],
+    },
     // Add more main items here
   ];
 
@@ -311,22 +338,33 @@ const renderMobileMenu = (
       <AppBar position="fixed" open={open}>
         <Toolbar>
           <IconButton
+          
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
             sx={{
+            boxShadow:1,
               marginRight: 5,
               ...(open && { display: 'none' }),
+              border:'0.5px solid var(--desc-color)'
             }}
           >
-            <MenuIcon />
+            <MenuIcon 
+            sx={{
+              color:'var(--desc-color)'
+            }}
+            
+            />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <Typography style={{color:'var(--desc-color)'}} variant="h6" noWrap component="div">
             ECD MIS
           </Typography>
           {/* search Bar */}
-          <Search>
+          <Search sx={{
+            boxShadow:1,
+            border:'0.5px solid var(--desc-color)'
+          }}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -335,38 +373,94 @@ const renderMobileMenu = (
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-
           <Box sx={{ flexGrow: 1 }} />
 
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-          <IconButton size="large" onClick={()=>document.body.setAttribute("data-theme", "sharp-theme")} color="inherit">
+          <IconButton 
+          sx={{
+            boxShadow:1,
+            border:'1px solid var(--desc-color)',
+            marginRight: 0.5,
+
+          }}
+          size="large" onClick={()=>document.body.setAttribute("data-theme", "sharp-theme")} color="inherit">
               
-              <DeblurIcon />
-        
+              <DeblurIcon 
+              sx={{
+                color:'var(--desc-color)',
+              }}
+              />
           </IconButton>
-          <IconButton size="large" onClick={()=>document.body.setAttribute("data-theme", "dark-theme")} color="inherit">
-              <NightlightIcon />
+          <IconButton 
+          sx={{
+            boxShadow:1,
+            border:'1px solid var(--desc-color)',
+            marginRight: 0.5,
+
+          }}
+          size="large" onClick={()=>document.body.setAttribute("data-theme", "dark-theme")} color="inherit">
+              <NightlightIcon         
+              sx={{
+                color:'var(--desc-color)',
+              }}
+              />
           </IconButton>
-          <IconButton size="large" onClick={()=>document.body.setAttribute("data-theme", "sea-theme")} color="inherit">
-              
-                <LightModeIcon />
-          
+          <IconButton
+              sx={{
+                boxShadow:1,
+                border:'1px solid var(--desc-color)',
+                marginRight: 5,
+
+              }}
+          size="large" onClick={()=>document.body.setAttribute("data-theme", "sea-theme")} color="inherit">
+                <LightModeIcon     
+              sx={{
+                color:'var(--desc-color)',
+              }}
+                />
             </IconButton>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
+            <IconButton
+             sx={{
+              boxShadow:1,
+              border:'1px solid var(--desc-color)',
+              marginRight: 0.5,
+
+            }}
+            size="large" aria-label="show 4 new mails" color="inherit">
+              <Badge 
+              sx={{
+                color:'var(--desc-color)'
+              }}
+              badgeContent={4} color="error">
+                <MailIcon sx={{
+                  color:'var(--desc-color)'
+                }} />
               </Badge>
             </IconButton>
             <IconButton
+                sx={{
+                  boxShadow:1,
+                  border:'1px solid var(--desc-color)',
+                  marginRight: 0.5,
+
+                }}
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
+              <Badge
+            sx={{
+              color:'var(--desc-color)'
+            }}
+              badgeContent={17} color="error">
+                <NotificationsIcon/>
               </Badge>
             </IconButton>
             <IconButton
+                sx={{
+                  boxShadow:1,
+                  border:'1px solid var(--desc-color)'
+                }}
               size="large"
               edge="end"
               aria-label="account of current user"
@@ -375,7 +469,12 @@ const renderMobileMenu = (
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              <AccountCircle
+                sx={{
+                  color:'var(--desc-color)',
+                }}            
+
+              />
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -387,17 +486,25 @@ const renderMobileMenu = (
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-              <MoreIcon />
+              <MoreIcon   sx={{
+                  color:'var(--desc-color)',
+                }}            
+                />
             </IconButton>
           </Box>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
-      <Drawer variant="permanent" open={open}>
+      <Drawer 
+      sx={{
+        boxShadow:4,
+      }}
+      
+      variant="permanent" open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            {theme.direction === 'rtl' ? <ChevronRightIcon sx={{color:'var(--desc-color)'}} /> : <ChevronLeftIcon sx={{color:'var(--desc-color)'}} />}
           </IconButton>
         </DrawerHeader>
 
@@ -408,10 +515,10 @@ const renderMobileMenu = (
            <>
         <Divider />
 
-        <ListItemButton key={index} onClick={item.onClick}>
-                <ListItemIcon>{item.icon}</ListItemIcon>
+        <ListItemButton sx={{color:'var(--desc-color)'}} key={index} onClick={item.onClick}>
+                <ListItemIcon sx={{color:'var(--desc-dolor)'}}>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.text} />
-                {item.state ? <ExpandLess /> : <ExpandMore />}
+                {item.state===null ? null :item.state ? <ExpandLess  sx={{color:'var(--desc-color)'}}/> : <ExpandMore  sx={{color:'var(--desc-color)'}}/>}
         </ListItemButton>
 
 
@@ -419,8 +526,8 @@ const renderMobileMenu = (
                 <List component="div" disablePadding>
                   {/*             Nested List will be here */}
                   {item.nestedItems.length>0 ? item.nestedItems.map((nestedItem, nestedIndex) => (
-                    <ListItemButton key={nestedIndex} sx={{ pl: 4 }} >
-                      <ListItemIcon>{nestedItem.icon}</ListItemIcon>
+                    <ListItemButton sx={{color:'var(--desc-color)'}} onClick={nestedItem.onClick}  key={nestedIndex} sx={{ pl: 4 }} >
+                      <ListItemIcon sx={{color:'var(--desc-color)'}}> {nestedItem.icon}</ListItemIcon>
                       <ListItemText primary={nestedItem.text} />
                     </ListItemButton>
                   ))
@@ -432,7 +539,11 @@ const renderMobileMenu = (
         </List>
 
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" bgcolor={'var(--paper-color)'} 
+      sx={{ flexGrow: 1, p: 3,
+        height:'100vh'
+      
+       }}>
         <DrawerHeader />
           {props.pageContent}
       </Box>

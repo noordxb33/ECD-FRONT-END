@@ -47,6 +47,7 @@
   --headings-color: #000000;
   --desc-color: #000000;
   --drawer-bg-color:#fff;
+  --paper-color:#e4d9d971;
 }
 
 body[data-theme="dark-theme"] {
@@ -54,22 +55,28 @@ body[data-theme="dark-theme"] {
   --headings-color: #fff;
   --desc-color: #fff;
   --drawer-bg-color:#310b0b;
+  --paper-color:#3f3d3dcb;
+
 
 }
 
 body[data-theme="sea-theme"] {
-  --bg-color: #5a460d;
-  --headings-color: #96ceb4;
-  --desc-color: #ff9292;
-  --drawer-bg-color:#1afdfdb7;
+  --bg-color: #fff;
+  --headings-color: #000000;
+  --desc-color: #000000;
+  --drawer-bg-color:#fff;
+  --paper-color:#e4e4e4cb;
+
 
 }
 
 body[data-theme="sharp-theme"] {
-  --bg-color: #ff7777;
+  --bg-color: #696969;
   --headings-color: #a2416b;
-  --desc-color: #852747;
-  --drawer-bg-color:#b9a7a7;
+  --desc-color: #fff;
+  --drawer-bg-color:#696969;
+  --paper-color:#977d7dcb;
+
 
 }
 
@@ -93,6 +100,10 @@ body {
 .hearo-section-title {
   margin-bottom: 16px;
   color: var(--headings-color);
+}
+::placeholder {
+  color: var(--desc-color);
+  opacity: 1; /* Firefox */
 }
 
 .select-theme-heading {
