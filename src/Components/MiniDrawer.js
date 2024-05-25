@@ -43,26 +43,32 @@ const drawerWidth = 230;
 
 // when you open the drawer this is used for styling 
 const openedMixin = (theme) => ({
-  color:'var(--desc-color)',
-  backgroundColor:'var(--drawer-bg-color)',
+  backgroundColor: 'var(--drawer-bg-color)',
+  color: 'var(--color) !important',
   width: drawerWidth,
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen,
   }),
   overflowX: 'hidden',
+  [`& *`]: {
+    color: 'var(--color) !important',
+  },
 });
 
 // when you close the drawer this is used for styling
 const closedMixin = (theme) => ({
-  color:'var(--desc-color)',
-  backgroundColor:'var(--drawer-bg-color)',
+  backgroundColor: 'var(--drawer-bg-color)',
+  color: `var(--color) !important`,
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
   overflowX: 'hidden',
   width: `calc(${theme.spacing(7)} + 1px)`,
+  [`& *`]: {
+    color: `var(--color) !important`,
+  },
   [theme.breakpoints.up('sm')]: {
     width: `calc(${theme.spacing(8)} + 1px)`,
   },
@@ -77,12 +83,23 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   ...theme.mixins.toolbar,
 }));
 
+// Wrapper component
+const PageWrapper = styled('body')(({ theme }) => ({
+  background: 'var(--bg-color)',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  width: '100%',
+  height: '100vh',
+  color: 'var(--color)',
+}));
 
 //this is used for the app bar styling 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
-  backgroundColor:'var(--bg-color)',
+  background:'var(--headings-color)',
+  color: 'var(--color)',
+  boxShadow: 'var(--box-shadow)',
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
@@ -165,6 +182,7 @@ export default function MiniDrawer(props) {
   const changeRoute=useNavigate();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [dark, setDark] = React.useState(false);
   const [openAdmission, setOpenAdmission] = React.useState(false);
   const [finance, setOpenFinance] = React.useState(false);
   const [settings, setSettings] = React.useState(false);
@@ -333,7 +351,7 @@ const renderMobileMenu = (
   ];
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <PageWrapper>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
@@ -445,8 +463,14 @@ const renderMobileMenu = (
 
                 }}
               size="large"
-              aria-label="show 17 new notifications"
               color="inherit"
+              onClick={handleDrawerOpen}
+              aria-label="open drawer"
+              edge="start"
+              sx={{
+                marginRight: 5,
+                ...(open && { display: 'none' }),
+              }}
             >
               <Badge
             sx={{
@@ -509,11 +533,11 @@ const renderMobileMenu = (
         </DrawerHeader>
 
 
-            {/* /// our List Start at here.... */}
-        <List>
-          {listItems.map((item, index) => (
-           <>
-        <Divider />
+              {/* /// our List Start at here.... */}
+          <List>
+            {listItems.map((item, index) => (
+            <>
+          <Divider />
 
         <ListItemButton sx={{color:'var(--desc-color)'}} key={index} onClick={item.onClick}>
                 <ListItemIcon sx={{color:'var(--desc-dolor)'}}>{item.icon}</ListItemIcon>
@@ -547,7 +571,8 @@ const renderMobileMenu = (
         <DrawerHeader />
           {props.pageContent}
       </Box>
-    </Box>
+    </PageWrapper>
+    
   );
 }
 

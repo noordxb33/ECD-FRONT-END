@@ -23,7 +23,8 @@ export default function Gender() {
         
         
         Please insert the records for the Gender Resource.
-        <vr/>
+       
+       
     <Grid item lg={6} xl={6} xs={12} sm={12} md={6}>
         
     </Grid>
