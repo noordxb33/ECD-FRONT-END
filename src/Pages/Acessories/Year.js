@@ -22,9 +22,9 @@ export default function Year(props) {
                     width: '100%',
                     height: '40vh',
                     borderRadius: 3,
-                    bgcolor: 'var(--bg-color)',
+                    background: 'var(--bg-color)',
                     padding: 4,
-                    color: 'var(--desc-color)'
+                    color: 'var(--color)'
                     // '&:hover': {
                     //   bgcolor: 'primary.dark',
                     // },

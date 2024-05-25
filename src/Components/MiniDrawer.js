@@ -88,7 +88,7 @@ const PageWrapper = styled('body')(({ theme }) => ({
   background: 'var(--bg-color)',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
-  width: '100%',
+  width: '100vw',
   height: '100vh',
   color: 'var(--color)',
 }));
@@ -182,7 +182,6 @@ export default function MiniDrawer(props) {
   const changeRoute=useNavigate();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [dark, setDark] = React.useState(false);
   const [openAdmission, setOpenAdmission] = React.useState(false);
   const [finance, setOpenFinance] = React.useState(false);
   const [settings, setSettings] = React.useState(false);
@@ -352,6 +351,8 @@ const renderMobileMenu = (
 
   return (
     <PageWrapper>
+    <Box sx={{ display: 'flex' }}>
+
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
@@ -462,15 +463,7 @@ const renderMobileMenu = (
                   marginRight: 0.5,
 
                 }}
-              size="large"
-              color="inherit"
-              onClick={handleDrawerOpen}
-              aria-label="open drawer"
-              edge="start"
-              sx={{
-                marginRight: 5,
-                ...(open && { display: 'none' }),
-              }}
+
             >
               <Badge
             sx={{
@@ -563,14 +556,16 @@ const renderMobileMenu = (
         </List>
 
       </Drawer>
-      <Box component="main" bgcolor={'var(--paper-color)'} 
+      <Box component="main" 
       sx={{ flexGrow: 1, p: 3,
-        height:'100vh'
-      
+        height:'100vh',
+        background:'var(--bg-color)',
        }}>
         <DrawerHeader />
           {props.pageContent}
       </Box>
+    </Box>
+
     </PageWrapper>
     
   );
