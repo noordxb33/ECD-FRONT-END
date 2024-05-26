@@ -7,6 +7,7 @@ import Year from './Pages/Acessories/Year';
 import axios from 'axios';
 import {APIADD} from './APIADD';
 import toast,{Toaster} from 'react-hot-toast';
+import BatchesForm from './Pages/Acessories/BatchesForm';
 
 
 function App(props) {
@@ -72,6 +73,7 @@ function App(props) {
     <Route path="/Add-Admission" element={<RouteComponent Component={<Add_Addmission/>}/>} exact />
     <Route path="/List-Admission" element={<RouteComponent Component={<>HomePage</>}/>} exact />
     <Route path="/Gender" element={<RouteComponent Component={<Gender/>}/>}  />
+    <Route path="/Batches" element={<RouteComponent Component={<BatchesForm/>}/>}  />
     <Route path="/Year" element={<RouteComponent Component={<Year getRequest={Get} postRequest={postRequest} />}/>}  />
     </Routes>
     </BrowserRouter>
