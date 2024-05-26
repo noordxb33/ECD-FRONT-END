@@ -3,7 +3,7 @@ import React from 'react'
 import {ThemeProvider} from '@mui/system';
 
 
-export default function Gender() {
+export default function Add_Addmission() {
   return (
    
  <Grid container
@@ -22,9 +22,7 @@ export default function Gender() {
       >
         
         
-        Please insert the records for the Gender Resource.
-       
-       
+        Please insert the Addmission for the Gender Resource.
     <Grid item lg={6} xl={6} xs={12} sm={12} md={6}>
         
     </Grid>

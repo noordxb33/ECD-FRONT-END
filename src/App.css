@@ -43,38 +43,66 @@
 
 /* the cod for thems start from here.... */
 :root {
-  --bg-color: #fff;
   --headings-color: #000000;
-  --desc-color: #000000;
+  --box-shadow: none;
+  --desc-color: #fff;
+  --drawer-bg-color:#000;
+  --color: #ffffffbf;
   --drawer-bg-color:#fff;
+  --paper-color:#e4d9d971;
 }
 
-body[data-theme="dark-theme"] {
-  --bg-color: #000000;
-  --headings-color: #fff;
-  --desc-color: #fff;
-  --drawer-bg-color:#310b0b;
 
+
+body[data-theme="dark-theme"] {
+  --bg-color: linear-gradient(
+    to left bottom,
+    #001f2f,
+    #0d1727,
+    #131421,
+    #150f1b,
+    #130c15,
+    #100a10,
+    #0d0508,
+    #090000,
+    #0b0203,
+    #100308,
+    #130410,
+    #140410
+  );
+  --headings-color: #000000;
+  --box-shadow: none;
+  --desc-color: #fff;
+  --drawer-bg-color:#000;
+  --color: #ffffffbf;
+  --paper-color:#3f3d3dcb;
 }
 
 body[data-theme="sea-theme"] {
-  --bg-color: #5a460d;
-  --headings-color: #96ceb4;
-  --desc-color: #ff9292;
-  --drawer-bg-color:#1afdfdb7;
-
+  --bg-color: linear-gradient(to right top, #fce9f4, #fbedf8, #fbf2fb, #fbf6fd, #fcfafe, #fcfbff, #fbfbff, #fbfcff, #f7faff, #f2f8ff, #ecf6ff, #e6f5ff);
+  --headings-color: #fdeef6;
+  --desc-color: #000000;
+  --drawer-bg-color: #fdeef6;
+  --color: #000; 
+  --box-shadow: 0 0 2px gray;
+  --paper-color:#e4e4e4cb;
 }
 
-body[data-theme="sharp-theme"] {
-  --bg-color: #ff7777;
-  --headings-color: #a2416b;
-  --desc-color: #852747;
-  --drawer-bg-color:#b9a7a7;
-
+body[data-theme="sharp-theme"] { 
+--bg-color:  linear-gradient(to left, #9796f0, #fbc7d4);
+--headings-color: linear-gradient(to left, #9796f0, #fbc7d4);
+--desc-color: #000000;
+--drawer-bg-color:linear-gradient(to left, #9796f0, #fbc7d4);
+--color: #000;
+--box-shadow: 0 0 5px gray;
+--paper-color:#977d7dcb;
 }
 
 body {
   background: var(--bg-color) !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .content-container {
@@ -94,7 +122,6 @@ body {
   margin-bottom: 16px;
   color: var(--headings-color);
 }
-
 .select-theme-heading {
   color: var(--headings-color);
 }
