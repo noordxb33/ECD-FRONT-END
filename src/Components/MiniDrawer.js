@@ -6,6 +6,7 @@ import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import DeblurIcon from '@mui/icons-material/Deblur';
+import { Toaster } from 'react-hot-toast';
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
@@ -341,7 +342,8 @@ const renderMobileMenu = (
       nestedItems: [
         { text: 'Gender', icon: <MailIcon />, onClick:()=>changeRoute('/Gender')},
         { text: 'Year', icon: <MailIcon />, onClick:()=>changeRoute('/Year')},
-        { text: 'Month', icon: <MailIcon />, onClick:()=>changeRoute('/Gender')},
+        { text: 'Month', icon: <MailIcon />, onClick:()=>changeRoute('/Month')},
+        { text: 'Occupations', icon: <MailIcon />, onClick:()=>changeRoute('/Occupations')},
 
         // Add more nested items here
       ],
@@ -564,6 +566,8 @@ const renderMobileMenu = (
         <DrawerHeader />
           {props.pageContent}
       </Box>
+      <Toaster />
+
     </Box>
 
     </PageWrapper>

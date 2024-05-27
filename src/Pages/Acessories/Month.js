@@ -1,18 +1,29 @@
 import { Typography, CssBaseline, Divider, Grid, Stack } from '@mui/material'
 import React from 'react'
 import { ThemeProvider } from '@mui/system';
-import { FormContainer, TextFieldElement } from 'react-hook-form-mui';
+import { FormContainer, TextFieldElement,AutocompleteElement } from 'react-hook-form-mui';
 import Button from '@mui/material/Button';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import CancelIcon from '@mui/icons-material/Cancel';
+import { useEffect,useState } from 'react';
+export default function Month(props) {
+        const [years,setYears]=useState([]);
 
-export default function Year(props) {
 
 
+    useEffect(()=>{
+        props.getRequest('/Year',setYears)
+    },[])
+    
     return (
         <FormContainer
-            defaultValues={{ year: '' }}
-            onSuccess={data => props.postRequest('/Year', data)}>
+            defaultValues={{ month:'',year_id:''}}
+            onSuccess={data => {
+                props.postRequest('/Month', {month:data.month,year_id:data.year_id.id})
+                data.month='';
+                data.year_id='';
+            }
+            }>
             <CssBaseline />
             <Grid container
                 sx={{
@@ -40,12 +51,18 @@ export default function Year(props) {
                             borderRadius: '5px',
                             label: { color: 'var(--desc-color)' },
                         }}
-                        name="year" label="Please Enter Year Name in here" required
+                        name="month" label="Please Enter the Month Name in here" required
                          />
                 </Grid>
-
                 <Grid item lg={6} xl={6} xs={12} sm={12} md={6}>
-                    <Stack sx={{ marginTop: '8%' }} direction="row" spacing={2}>
+                <AutocompleteElement sx={{marginTop:'20%'}}
+                        name="year_id"
+                        options={years}
+                        />
+                   
+                </Grid>
+                <Grid item xs ls g sm md>
+                <Stack direction="row" spacing={2}>
                         <Button type="submit" variant="outlined" sx={{ fontSize: '22px' }} color="success">
                             <AddCircleOutlineIcon sx={{ marginRight: '2%' }} />
                             Add
@@ -57,7 +74,6 @@ export default function Year(props) {
                     </Stack>
                 </Grid>
             </Grid>
-
         </FormContainer>
     )
 }

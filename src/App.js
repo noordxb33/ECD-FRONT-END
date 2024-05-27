@@ -6,11 +6,11 @@ import Add_Addmission from './Pages/Admission/Add_Addmission';
 import Year from './Pages/Acessories/Year';
 import Teacher from './Pages/Acessories/Teachers';
 import axios from 'axios';
-import APIADD from './Pages/Admission/APIADD';
+import {APIADD} from './APIADD';
 import toast,{Toaster} from 'react-hot-toast';
-import Fotheroccupition  from './Pages/Acessories/Fatheroccupition';
+import Fatheroccupition  from './Pages/Acessories/Fatheroccupition';
 import BatchesForm from './Pages/Acessories/BatchesForm';
-
+import Month from './Pages/Acessories/Month';
 
 function App(props) {
 
@@ -26,7 +26,7 @@ function App(props) {
     const Get = async (address,setter) => {
       await ApiEndPoint.get(address)
         .then(response => {
-          if(response.status==200){
+          if(response.status===200){
             toast.success(
             'Data was retrieved successfully',
             {
@@ -39,7 +39,7 @@ function App(props) {
           return response;
         })
         .catch(function (error) {
-          return error
+          toast.error( `${error}`)
   
         })
         .then(function () {
@@ -78,7 +78,8 @@ function App(props) {
     <Route path="/Gender" element={<RouteComponent Component={<Gender/>}/>}  />
     <Route path="/Batches" element={<RouteComponent Component={<BatchesForm/>}/>}  />
     <Route path="/Year" element={<RouteComponent Component={<Year getRequest={Get} postRequest={postRequest} />}/>}  />
-    <Route path="/Fotheroccupition" element={<RouteComponent Component={<Fotheroccupition  />}/>}  />
+    <Route path="/Month" element={<RouteComponent Component={<Month getRequest={Get} postRequest={postRequest} />}/>}  />
+    <Route path="/Occupations" element={<RouteComponent Component={<Fatheroccupition  />}/>}  />
     <Route path="/Teachers" element={<RouteComponent Component={< Teacher />}/>}  />
     </Routes>
     </BrowserRouter>
