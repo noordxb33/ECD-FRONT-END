@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
+
 import RouteComponent from './RouteComponent';
 import Gender from './Pages/Acessories/Gender';
 import Add_Addmission from './Pages/Admission/Add_Addmission';
@@ -79,7 +80,7 @@ function App(props) {
     <Route path="/Batches" element={<RouteComponent Component={<BatchesForm/>}/>}  />
     <Route path="/Year" element={<RouteComponent Component={<Year getRequest={Get} postRequest={postRequest} />}/>}  />
     <Route path="/Month" element={<RouteComponent Component={<Month getRequest={Get} postRequest={postRequest} />}/>}  />
-    <Route path="/Occupations" element={<RouteComponent Component={<Fatheroccupition  />}/>}  />
+    <Route path="/Father occupations" element={<RouteComponent Component={<Fatheroccupition  />}/>}  />
     <Route path="/Teachers" element={<RouteComponent Component={< Teacher />}/>}  />
     </Routes>
     </BrowserRouter>
