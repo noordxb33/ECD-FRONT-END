@@ -8,9 +8,9 @@ import Teacher from './Pages/Acessories/Teachers';
 import axios from 'axios';
 import {APIADD} from './APIADD';
 import toast,{Toaster} from 'react-hot-toast';
-import Fatheroccupition  from './Pages/Acessories/Fatheroccupition';
 import BatchesForm from './Pages/Acessories/BatchesForm';
 import Month from './Pages/Acessories/Month';
+import Fotheroccupition from './Pages/Acessories/Fatheroccupition';
 
 function App(props) {
 
@@ -22,6 +22,7 @@ function App(props) {
         "Accept": "application/json",
       },
     });
+    
   
     const Get = async (address,setter) => {
       await ApiEndPoint.get(address)
@@ -79,7 +80,7 @@ function App(props) {
     <Route path="/Batches" element={<RouteComponent Component={<BatchesForm/>}/>}  />
     <Route path="/Year" element={<RouteComponent Component={<Year getRequest={Get} postRequest={postRequest} />}/>}  />
     <Route path="/Month" element={<RouteComponent Component={<Month getRequest={Get} postRequest={postRequest} />}/>}  />
-    <Route path="/Occupations" element={<RouteComponent Component={<Fatheroccupition  />}/>}  />
+    <Route path="/Occupations" element={<RouteComponent Component={<Fotheroccupition  />}/>}  />
     <Route path="/Teachers" element={<RouteComponent Component={< Teacher />}/>}  />
     </Routes>
     </BrowserRouter>
