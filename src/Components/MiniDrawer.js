@@ -37,6 +37,13 @@ const drawerWidth = 230;
 
 // when you open the drawer this is used for styling 
 const openedMixin = (theme) => ({
+<<<<<<< Updated upstream
+=======
+  backgroundColor: 'var(--drawer-bg-color)',
+  color: 'var(--color) !important',
+  borderRight: 'var(--border)',
+  boxShadow: 'var(--box-shadow)',
+>>>>>>> Stashed changes
   width: drawerWidth,
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
@@ -47,6 +54,13 @@ const openedMixin = (theme) => ({
 
 // when you close the drawer this is used for styling
 const closedMixin = (theme) => ({
+<<<<<<< Updated upstream
+=======
+  backgroundColor: 'var(--drawer-bg-color)',
+  color: `var(--color) !important`,
+  borderRight: 'var(--border)',
+  boxShadow: 'var(--box-shadow)',
+>>>>>>> Stashed changes
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -72,6 +86,13 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
+<<<<<<< Updated upstream
+=======
+  background:'var(--headings-color)',
+  color: 'var(--color)',
+  boxShadow: 'var(--box-shadow)',
+  borderBottom: 'var(--border)',
+>>>>>>> Stashed changes
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
@@ -287,7 +308,7 @@ const renderMobileMenu = (
       onClick:()=>setOpenFinance(!finance),
       state:finance,
       nestedItems: [
-        { text: 'Pay Fee', icon: <MailIcon />},
+        { text: 'Pay Fee', icon: <MailIcon />, onClick:()=>changeRoute('/Fee')},
         { text: 'List of Fee', icon: <MailIcon />,},
         // Add more nested items here
       ],
