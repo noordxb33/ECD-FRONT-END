@@ -12,7 +12,12 @@ export default function Year(props) {
     return (
         <FormContainer
             defaultValues={{ year: '' }}
+<<<<<<< Updated upstream
             onSuccess={data => props.postRequest('/Year', data)}>
+=======
+            onSuccess={data => props.postRequest('/Year', data)}
+        >
+>>>>>>> Stashed changes
             <CssBaseline />
             <Grid container
                 sx={{
@@ -32,16 +37,33 @@ export default function Year(props) {
                     <Typography style={{ color: 'var(--desc-color)', widht: '100%' }} variant="h5" noWrap>
                         Please insert the records for the Gender Resource.
                     </Typography>
-                    <TextFieldElement
+                    <TextFieldElement 
                         sx={{
                             margin: 5,
                             width: '80%',
                             border: '1px solid var(--desc-color)',
                             borderRadius: '5px',
+<<<<<<< Updated upstream
                             label: { color: 'var(--desc-color)' },
                         }}
                         name="year" label="Please Enter Year Name in here" required
                          />
+=======
+                            input: {
+                                color: 'var(--desc-color)',
+                                "&::placeholder": {
+                                    color: 'var(--desc-color)',  // <----- Add this.
+                                    opacity: 1,
+                                },
+                                '&:active': {
+                                    color: 'var(--desc-color)',
+                                },
+                            },
+                            label: { color: 'var(--desc-color)' },
+                        }}
+                        name="year" label="Please Enter Year Name in here" required
+                    />
+>>>>>>> Stashed changes
                 </Grid>
 
                 <Grid item lg={6} xl={6} xs={12} sm={12} md={6}>
@@ -56,7 +78,18 @@ export default function Year(props) {
                         </Button>
                     </Stack>
                 </Grid>
+<<<<<<< Updated upstream
             </Grid>
+=======
+
+
+
+
+
+
+            </Grid>
+            <Toaster />
+>>>>>>> Stashed changes
 
         </FormContainer>
     )
