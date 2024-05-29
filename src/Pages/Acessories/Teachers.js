@@ -1,86 +1,64 @@
+// import React from "react";
+// import TextField from "@mui/material/TextField";
+// import { Paper } from "@mui/material";
+// export  default function Teachers() {
+//   return (
+//     <Paper>
+//       <h2>Teachers</h2>
 
-import React, {useState} from 'react';
-import { TextField, Button, Container, Stack } from '@mui/material';
-import { Link } from "react-router-dom"
- 
+//       <TextField
+//           helperText={null}
+//           size="small"
+//           error={!!error}
+//           onChange={onChange}
+//           value={value}
+//           fullWidth
+//           label={Name}
+//           variant="outlined"
+//           ></TextField>
+//           helperText={null}
+//           size="small"
+//           error={!!error}
+//           onChange={onChange}
+//           value={value}
+//           fullWidth
+//           label={Lastname}
+//           variant="outlined"
+//           /<TextField
+//           helperText={ null}
+//           size="small"
+//           error={!!error}
+//           onChange={onChange}
+//           value={value}
+//           fullWidth
+//           label={Dateofbirh}
+//           variant="outlined"
+//           /><TextField
+//           helperText={null}
+//           size="small"
+//           error={!!error}
+//           onChange={onChange}
+//           value={value}
+//           fullWidth
+//           label={Startdate}
+//           variant="outlined"
+//           /><TextField
+//           helperText={null}
+//           size="small"
+//           error={!!error}
+//           onChange={onChange}
+//           value={value}
+//           fullWidth
+//           label={Enddate}
+//           variant="outlined"
+//           />
 
-const RegisterForm = () => {
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [email, setEmail] = useState('')
-    const [dateOfBirth, setDateOfBirth] = useState('')
-    const [password, setPassword] = useState('')
- 
-    function handleSubmit(event) {
-        event.preventDefault();
-        console.log(firstName, lastName, email, dateOfBirth, password) 
-    }
- 
-    return (
-        <React.Fragment>
-            <h2>Register Form</h2>
-            <form onSubmit={handleSubmit} action={<Link to="/login" />}>
-                <Stack spacing={2} direction="row" sx={{marginBottom: 4}}>
-                    <TextField
-                        type="text"
-                        variant='outlined'
-                        color='secondary'
-                        label="First Name"
-                        onChange={e => setFirstName(e.target.value)}
-                        value={firstName}
-                        fullWidth
-                        required
-                    />
-                    <TextField
-                        type="text"
-                        variant='outlined'
-                        color='secondary'
-                        label="Last Name"
-                        onChange={e => setLastName(e.target.value)}
-                        value={lastName}
-                        fullWidth
-                        required
-                    />
-                </Stack>
-                <TextField
-                    type="email"
-                    variant='outlined'
-                    color='secondary'
-                    label="Email"
-                    onChange={e => setEmail(e.target.value)}
-                    value={email}
-                    fullWidth
-                    required
-                    sx={{mb: 4}}
-                />
-                <TextField
-                    type="Name"
-                    variant='Last-name'
-                    color='Gender-Id'
-                    label="start-Date"
-                    onChange={e => setPassword(e.target.value)}
-                    value={password}
-                    required
-                    fullWidth
-                    sx={{mb: 4}}
-                />
-                <TextField
-                    type="date"
-                    variant='outlined'
-                    color='secondary'
-                    label="Date of Birth"
-                    onChange={e => setDateOfBirth(e.target.value)}
-                    value={dateOfBirth}
-                    fullWidth
-                    required
-                    sx={{mb: 4}}
-                />
-                <Button variant="outlined" color="secondary" type="submit">Register</Button>
-            </form>
-            <small>Already have an account? <Link to="/login">Login Here</Link></small>
-     
-        </React.Fragment>
-    )
-}
- 
-export default RegisterForm;
+//       <Button onClick={handleSubmit}>Submit</Button>
+//       <Button onClick={handleReset}>Reset</Button>
+//     </Paper>
+//   );
+// };
+        
+    
+    
+

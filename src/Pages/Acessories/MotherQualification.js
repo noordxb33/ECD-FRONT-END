@@ -1,29 +1,18 @@
 import { Typography, CssBaseline, Divider, Grid, Stack } from '@mui/material'
 import React from 'react'
 import { ThemeProvider } from '@mui/system';
-import { FormContainer, TextFieldElement,AutocompleteElement } from 'react-hook-form-mui';
+import { FormContainer, TextFieldElement } from 'react-hook-form-mui';
 import Button from '@mui/material/Button';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import CancelIcon from '@mui/icons-material/Cancel';
-import { useEffect,useState } from 'react';
-export default function Month(props) {
-        const [years,setYears]=useState([]);
+
+export default function MotherQualification(props) {
 
 
-
-    useEffect(()=>{
-        props.getRequest('/Year',setYears)
-    },[])
-    
     return (
         <FormContainer
-            defaultValues={{ month:'',year_id:''}}
-            onSuccess={data => {
-                props.postRequest('/Month', {month:data.month,year_id:data.year_id.id})
-                data.month='';
-                data.year_id='';
-            }
-            }>
+            defaultValues={{ MotherQualification: '' }}
+            onSuccess={data => props.postRequest('/MotherQualification', data)}>
             <CssBaseline />
             <Grid container
                 sx={{
@@ -41,7 +30,7 @@ export default function Month(props) {
             >
                 <Grid item lg={6} xl={6} xs={12} sm={12} md={6}>
                     <Typography style={{ color: 'var(--desc-color)', widht: '100%' }} variant="h5" noWrap>
-                        Please insert the records for the Gender Resource.
+                        Please inter your MotherQualification.
                     </Typography>
                     <TextFieldElement
                         sx={{
@@ -51,19 +40,13 @@ export default function Month(props) {
                             borderRadius: '5px',
                             label: { color: 'var(--desc-color)' },
                         }}
-                        name="month" label="Please Enter the Month Name in here" required
+                        name="MotherQualification" label="Please Enter MotherQualification in here" required
                          />
                 </Grid>
+
                 <Grid item lg={6} xl={6} xs={12} sm={12} md={6}>
-                <AutocompleteElement sx={{marginTop:30}}
-                        name="year_id"
-                        options={years}
-                        />
-                   
-                </Grid>
-                <Grid item xs ls g sm md>
-                <Stack direction="row" spacing={2}>
-                        <Button type="submit" variant="outlined" sx={{ fontSize: '22px' }} color="success">
+                    <Stack sx={{ marginTop: '8%' }} direction="row" spacing={2}>
+                        <Button  type="submit" variant="outlined" sx={{ fontSize: '22px' }} color="success">
                             <AddCircleOutlineIcon sx={{ marginRight: '2%' }} />
                             Add
                         </Button>
@@ -74,6 +57,7 @@ export default function Month(props) {
                     </Stack>
                 </Grid>
             </Grid>
+
         </FormContainer>
     )
 }
