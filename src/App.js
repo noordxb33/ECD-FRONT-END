@@ -9,6 +9,7 @@ import axios from 'axios';
 import {APIADD} from './APIADD';
 import toast,{Toaster} from 'react-hot-toast';
 import MotherQualification from './Pages/Acessories/MotherQualification';
+import Fee from './Pages/Finance/Fee';
 function App(props) {
 
     //Creating A default Request For Log In
@@ -75,6 +76,7 @@ function App(props) {
     <Route path="/Batches" element={<RouteComponent Component={<BatchesForm  getRequest={Get} postRequest={postRequest}/>}/>}  />
     <Route path="/Year" element={<RouteComponent Component={<Year getRequest={Get} postRequest={postRequest} />}/>}  />
     <Route path="/MotherQualification" element={<RouteComponent Component={<MotherQualification getRequest={Get} postRequest={postRequest} />}/>}  />
+    <Route path="/Fee" element={<RouteComponent Component={<Fee getRequest={Get} postRequest={postRequest} />}/>}  />
 
     </Routes>
     </BrowserRouter>

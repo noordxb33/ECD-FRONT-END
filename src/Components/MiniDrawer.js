@@ -50,6 +50,7 @@ const openedMixin = (theme) => ({
   boxShadow: 'var(--box-shadow)',
   backgroundColor: 'var(--drawer-bg-color)',
   color: 'var(--color) !important',
+  borderRight: 'var(--border)',
   width: drawerWidth,
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
@@ -67,6 +68,7 @@ const closedMixin = (theme) => ({
   color: `var(--color) !important`,
   borderRight: 'var(--border)',
   boxShadow: 'var(--box-shadow)',
+  borderRight: 'var(--border)',
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -554,7 +556,7 @@ const renderMobileMenu = (
                 <List component="div" disablePadding>
                   {/*             Nested List will be here */}
                   {item.nestedItems.length>0 ? item.nestedItems.map((nestedItem, nestedIndex) => (
-                    <ListItemButton sx={{color:'var(--desc-color)'}} onClick={nestedItem.onClick}  key={nestedIndex} sx={{ pl: 4 }} >
+                    <ListItemButton sx={{color:'var(--desc-color)', pl: 4 }} onClick={nestedItem.onClick}  key={nestedIndex} >
                       <ListItemIcon sx={{color:'var(--desc-color)'}}> {nestedItem.icon}</ListItemIcon>
                       <ListItemText primary={nestedItem.text} />
                     </ListItemButton>

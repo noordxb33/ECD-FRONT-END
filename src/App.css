@@ -70,12 +70,13 @@ body[data-theme="dark-theme"] {
     #130410,
     #140410
   );
-  --headings-color: #000000;
+  --headings-color: transparent;
   --box-shadow: none;
   --desc-color: #fff;
-  --drawer-bg-color:#000;
+  --drawer-bg-color:transparent;
   --color: #ffffffbf;
   --paper-color:#3f3d3dcb;
+  --border: 1px solid white;
 }
 
 body[data-theme="sea-theme"] {
@@ -84,7 +85,7 @@ body[data-theme="sea-theme"] {
   --desc-color: #000000;
   --drawer-bg-color: #fdeef6;
   --color: #000; 
-  --box-shadow: 0 0 2px gray;
+  --box-shadow: 0 0 4px rgba(128, 128, 128, 0.5);
   --paper-color:#e4e4e4cb;
 }
 
@@ -162,10 +163,4 @@ body {
   border: 1px solid #d67d3e;
   color: black;
   box-shadow: none;
-}
-
-Teacher.js{
-  background-image: url(./Pages/Acessories/teacher.jpg);
-  background-size:cover;
- text-align: center;
 }
