@@ -1,8 +1,8 @@
 import './App.css';
-<<<<<<< Updated upstream
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import RouteComponent from './RouteComponent';
 import Gender from './Pages/Acessories/Gender';
+import BatchesForm from './Pages/Acessories/BatchesForm';
 import Add_Addmission from './Pages/Admission/Add_Addmission';
 import Year from './Pages/Acessories/Year';
 import axios from 'axios';
@@ -65,8 +65,19 @@ function App(props) {
   }
   
   return (
-    
-    <MiniDrawer/>
+    <BrowserRouter>
+    <Routes>
+
+    <Route path="/" element={<RouteComponent Component={<>HomePage</>}/>} exact />
+    <Route path="/Add-Admission" element={<RouteComponent Component={<Add_Addmission/>}/>} exact />
+    <Route path="/List-Admission" element={<RouteComponent Component={<>HomePage</>}/>} exact />
+    <Route path="/Gender" element={<RouteComponent Component={<Gender/>}/>}  />
+    <Route path="/Batches" element={<RouteComponent Component={<BatchesForm  getRequest={Get} postRequest={postRequest}/>}/>}  />
+    <Route path="/Year" element={<RouteComponent Component={<Year getRequest={Get} postRequest={postRequest} />}/>}  />
+    <Route path="/MotherQualification" element={<RouteComponent Component={<MotherQualification getRequest={Get} postRequest={postRequest} />}/>}  />
+
+    </Routes>
+    </BrowserRouter>
   );
 }
 

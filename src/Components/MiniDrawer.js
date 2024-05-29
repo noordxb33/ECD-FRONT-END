@@ -44,13 +44,10 @@ const drawerWidth = 230;
 
 // when you open the drawer this is used for styling 
 const openedMixin = (theme) => ({
-<<<<<<< Updated upstream
-=======
   backgroundColor: 'var(--drawer-bg-color)',
   color: 'var(--color) !important',
   borderRight: 'var(--border)',
   boxShadow: 'var(--box-shadow)',
->>>>>>> Stashed changes
   backgroundColor: 'var(--drawer-bg-color)',
   color: 'var(--color) !important',
   width: drawerWidth,
@@ -66,13 +63,10 @@ const openedMixin = (theme) => ({
 
 // when you close the drawer this is used for styling
 const closedMixin = (theme) => ({
-<<<<<<< Updated upstream
-=======
   backgroundColor: 'var(--drawer-bg-color)',
   color: `var(--color) !important`,
   borderRight: 'var(--border)',
   boxShadow: 'var(--box-shadow)',
->>>>>>> Stashed changes
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -110,13 +104,10 @@ const PageWrapper = styled('body')(({ theme }) => ({
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
-<<<<<<< Updated upstream
-=======
   background:'var(--headings-color)',
   color: 'var(--color)',
   boxShadow: 'var(--box-shadow)',
   borderBottom: 'var(--border)',
->>>>>>> Stashed changes
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
@@ -360,11 +351,8 @@ const renderMobileMenu = (
         { text: 'Year', icon: <MailIcon />, onClick:()=>changeRoute('/Year')},
         { text: 'Month', icon: <MailIcon />, onClick:()=>changeRoute('/Month')},
         { text: 'Occupations', icon: <MailIcon />, onClick:()=>changeRoute('/Occupations')},
-<<<<<<< Updated upstream
         { text: 'MotherQualification', icon: <MailIcon />, onClick:()=>changeRoute('/MotherQualification')},
-=======
         { text: 'Batches', icon: <MailIcon />, onClick:()=>changeRoute('/Batches')},
->>>>>>> Stashed changes
 
         // Add more nested items here
       ],
