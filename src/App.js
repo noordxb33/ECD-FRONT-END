@@ -7,7 +7,15 @@ import Year from './Pages/Acessories/Year';
 import axios from 'axios';
 import {APIADD} from './APIADD';
 import toast,{Toaster} from 'react-hot-toast';
+<<<<<<< Updated upstream
 import MotherQualification from './Pages/Acessories/MotherQualification';
+=======
+import Fatheroccupition  from './Pages/Acessories/Fatheroccupition';
+import BatchesForm from './Pages/Acessories/BatchesForm';
+import Month from './Pages/Acessories/Month';
+import SignIn from './Pages/Login/SignIn';
+
+>>>>>>> Stashed changes
 function App(props) {
 
     //Creating A default Request For Log In
@@ -67,6 +75,7 @@ function App(props) {
     <BrowserRouter>
     <Routes>
 
+    <Route path="/Login" element={<RouteComponent Component={<SignIn/>}/>} exact />
     <Route path="/" element={<RouteComponent Component={<>HomePage</>}/>} exact />
     <Route path="/Add-Admission" element={<RouteComponent Component={<Add_Addmission/>}/>} exact />
     <Route path="/List-Admission" element={<RouteComponent Component={<>HomePage</>}/>} exact />

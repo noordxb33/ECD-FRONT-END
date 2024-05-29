@@ -43,7 +43,6 @@ export default function Year(props) {
                         name="year" label="Please Enter Year Name in here" required
                          />
                 </Grid>
-
                 <Grid item lg={6} xl={6} xs={12} sm={12} md={6}>
                     <Stack sx={{ marginTop: '8%' }} direction="row" spacing={2}>
                         <Button type="submit" variant="outlined" sx={{ fontSize: '22px' }} color="success">
@@ -57,7 +56,6 @@ export default function Year(props) {
                     </Stack>
                 </Grid>
             </Grid>
-
         </FormContainer>
     )
 }
