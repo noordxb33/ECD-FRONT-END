@@ -1,17 +1,22 @@
 import { Typography, CssBaseline, Divider, Grid, Stack } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ThemeProvider } from '@mui/system';
-import { FormContainer, TextFieldElement } from 'react-hook-form-mui';
+import { FormContainer, TextFieldElement, AutocompleteElement } from 'react-hook-form-mui';
 import Button from '@mui/material/Button';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { Toaster } from 'react-hot-toast';
 
-export default function Year(props) {
+export default function BatchesForm(props) {
+    const [years,setYears]=useState([]);
 
 
-    return (
-        <FormContainer
+
+    useEffect(()=>{
+        props.getRequest('/Year',setYears)
+    },[])
+  return (
+    <FormContainer
             defaultValues={{ year: '' }}
             onSuccess={data => props.postRequest('/Year',data)}
         >
@@ -19,8 +24,9 @@ export default function Year(props) {
             <Grid container
                 sx={{
                     boxShadow: 5,
-                    width: '100%',
-                    height: '40vh',
+                    width: '80%',
+                    height: '80%',
+                    margin: '0 10%',
                     borderRadius: 3,
                     background: 'var(--bg-color)',
                     padding: 4,
@@ -32,11 +38,16 @@ export default function Year(props) {
             >
 
 
-                <Grid item lg={6} xl={6} xs={12} sm={12} md={6}>
+                <Grid item lg={12} xl={12} xs={12} sm={12} md={12}>
                     <Typography style={{ color: 'var(--desc-color)', widht: '100%' }} variant="h5" noWrap>
                         Please insert the records for the Gender Resource.
                     </Typography>
-                    <TextFieldElement
+                    
+                </Grid>
+                <Grid item lg={12} xl={12} xs={12} sm={12} md={12}>
+
+
+                <TextFieldElement
                         sx={{
                             margin:5,
                             width:'80%',
@@ -56,9 +67,42 @@ export default function Year(props) {
                         }}
                         name="year" label="Please Enter Year Name in here" required 
                         />
+                        </Grid>
+
+                        <Grid item lg={12} xl={12} xs={12} sm={12} md={12}>
+
+
+<TextFieldElement
+        sx={{
+            margin:5,
+            width:'80%',
+            border: '1px solid var(--desc-color)',
+            borderRadius:'5px',
+            input: {
+                color:'var(--desc-color)',
+                "&::placeholder": {  
+                    color:'var(--desc-color)',  // <----- Add this.
+                    opacity: 1,
+                },
+            '&:active':{
+                color: 'var(--desc-color)',
+            },
+            },
+            label: { color: 'var(--desc-color)' },
+        }}
+        name="year" label="Please Enter Year Name in here" required 
+        />
+        </Grid>
+
+        <Grid item lg={12} xl={12} xs={12} sm={12} md={12}>
+                <AutocompleteElement sx={{marginTop:'20%'}}
+                        name="year_id"
+                        options={years}
+                        />
+                   
                 </Grid>
 
-                <Grid item lg={6} xl={6} xs={12} sm={12} md={6}>
+                <Grid item lg={12} xl={12} xs={12} sm={12} md={12}>
 
 
                     <Stack sx={{ marginTop: '8%' }} direction="row" spacing={2}>
@@ -81,6 +125,5 @@ export default function Year(props) {
             </Grid> 
             <Toaster/>
 
-        </FormContainer>
-    )
+        </FormContainer>  )
 }
