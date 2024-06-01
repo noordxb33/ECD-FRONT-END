@@ -344,11 +344,11 @@ const renderMobileMenu = (
         { text: 'Year', icon: <MailIcon />, onClick:()=>changeRoute('/Year')},
         { text: 'Month', icon: <MailIcon />, onClick:()=>changeRoute('/Month')},
         { text: 'Occupations', icon: <MailIcon />, onClick:()=>changeRoute('/Occupations')},
-<<<<<<< Updated upstream
+// <<<<<<< Updated upstream
         { text: 'MotherQualification', icon: <MailIcon />, onClick:()=>changeRoute('/MotherQualification')},
-=======
+// =======
         { text: 'Batches', icon: <MailIcon />, onClick:()=>changeRoute('/Batches')},
->>>>>>> Stashed changes
+// >>>>>>> Stashed changes
 
         // Add more nested items here
       ],

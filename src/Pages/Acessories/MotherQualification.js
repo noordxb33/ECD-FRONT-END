@@ -7,8 +7,6 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import CancelIcon from '@mui/icons-material/Cancel';
 
 export default function MotherQualification(props) {
-
-
     return (
         <FormContainer
             defaultValues={{ MotherQualification: '' }}
