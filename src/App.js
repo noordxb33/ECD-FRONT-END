@@ -9,7 +9,6 @@ import toast,{Toaster} from 'react-hot-toast';
 import Year from './Pages/Acessories/YearPage/Year';
 import MotherQualification from './Pages/Acessories/MotherQualification';
 import YearPage from './Pages/Acessories/YearPage/YearPage';
-import Fatheroccupition  from './Pages/Acessories/Fatheroccupition';
 import BatchesForm from './Pages/Acessories/BatchesForm';
 import Month from './Pages/Acessories/Month';
 import SignIn from './Pages/Login/SignIn';

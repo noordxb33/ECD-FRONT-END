@@ -103,8 +103,9 @@ body[data-theme="sharp-theme"] {
 body {
   background: var(--bg-color) !important;
   background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
+  background-repeat: repeat-y;
+  min-height: 100vh;
+  
 }
 
 .content-container {
