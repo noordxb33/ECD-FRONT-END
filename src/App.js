@@ -1,14 +1,15 @@
 import './App.css';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import RouteComponent from './RouteComponent';
-import Gender from './Pages/Acessories/Gender';
 import Add_Addmission from './Pages/Admission/Add_Addmission';
 import axios from 'axios';
 import {APIADD} from './APIADD';
 import toast,{Toaster} from 'react-hot-toast';
+import Gender from './Pages/Acessories/GenderPage/Gender';
 import Year from './Pages/Acessories/YearPage/Year';
 import MotherQualification from './Pages/Acessories/MotherQualification';
 import YearPage from './Pages/Acessories/YearPage/YearPage';
+import GenderPage from'./Pages/Acessories/GenderPage/GenderPage';
 import BatchesForm from './Pages/Acessories/BatchesForm';
 import Month from './Pages/Acessories/Month';
 import SignIn from './Pages/Login/SignIn';
@@ -77,10 +78,12 @@ function App(props) {
     <Route path="/" element={<RouteComponent Component={<>HomePage</>}/>} exact />
     <Route path="/Add-Admission" element={<RouteComponent Component={<Add_Addmission/>}/>} exact />
     <Route path="/List-Admission" element={<RouteComponent Component={<>HomePage</>}/>} exact />
-    <Route path="/Gender" element={<RouteComponent Component={<Gender/>}/>}  />
     <Route path="/Batches" element={<RouteComponent Component={<BatchesForm  getRequest={Get} postRequest={postRequest}/>}/>}  />
     <Route path="/Year" element={<RouteComponent Component={<YearPage getRequest={Get} postRequest={postRequest} />}/>}  />
+    <Route path="/Gender" element={<RouteComponent Component={<GenderPage getRequest={Get} postRequest={postRequest}/>}/>}  />
     <Route path="/MotherQualification" element={<RouteComponent Component={<MotherQualification getRequest={Get} postRequest={postRequest} />}/>}  />
+   
+    
 
     </Routes>
     </BrowserRouter>
