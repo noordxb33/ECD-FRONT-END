@@ -81,7 +81,7 @@ export default function GenderTable(props) {
   return (
 <MaterialTable
 icons={tableIcons}
-title="Inserted Years"
+title="Inserted Gender"
 columns={columns}
 
 
