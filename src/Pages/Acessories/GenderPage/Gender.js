@@ -8,11 +8,11 @@ import CancelIcon from '@mui/icons-material/Cancel';
 
 
 
-export default function Year(props) {
+export default function Gender(props) {
     return (
         <FormContainer
-            defaultValues={{ year: '' }}
-             onSuccess={data => props.postRequest('/Year', data)}
+            defaultValues={{ Gender: '' }}
+             onSuccess={data => props.postRequest('/Gender', data)}
         >
             <CssBaseline />
             <Grid container
@@ -30,7 +30,7 @@ export default function Year(props) {
                             borderRadius: '5px',
                             label: { color: 'var(--desc-color)' },
                         }}
-                        name="year" label="Please Enter Year Name in here" required
+                        name="Gender" label="Please Enter Gender Name in here" required
                          />
                 </Grid>
                 <Grid item lg={6} xl={6} xs={12} sm={12} md={6}>

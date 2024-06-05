@@ -344,7 +344,15 @@ const renderMobileMenu = (
         { text: 'Year', icon: <MailIcon />, onClick:()=>changeRoute('/Year')},
         { text: 'Month', icon: <MailIcon />, onClick:()=>changeRoute('/Month')},
         { text: 'Occupations', icon: <MailIcon />, onClick:()=>changeRoute('/Occupations')},
+<<<<<<< HEAD
+// <<<<<<< Updated upstream
+        { text: 'MotherQualification', icon: <MailIcon />, onClick:()=>changeRoute('/MotherQualification')},
+// =======
         { text: 'Batches', icon: <MailIcon />, onClick:()=>changeRoute('/Batches')},
+// >>>>>>> Stashed changes
+=======
+        { text: 'Batches', icon: <MailIcon />, onClick:()=>changeRoute('/Batches')},
+>>>>>>> a51f66881ba64b4b0614c84745942e031c9da29a
 
         // Add more nested items here
       ],
@@ -546,7 +554,7 @@ const renderMobileMenu = (
                 <List component="div" disablePadding>
                   {/*             Nested List will be here */}
                   {item.nestedItems.length>0 ? item.nestedItems.map((nestedItem, nestedIndex) => (
-                    <ListItemButton sx={{color:'var(--desc-color)'}} onClick={nestedItem.onClick}  key={nestedIndex} sx={{ pl: 4 }} >
+                    <ListItemButton sx={{color:'var(--desc-color)',pl: 4}} onClick={nestedItem.onClick}  key={nestedIndex}>
                       <ListItemIcon sx={{color:'var(--desc-color)'}}> {nestedItem.icon}</ListItemIcon>
                       <ListItemText primary={nestedItem.text} />
                     </ListItemButton>

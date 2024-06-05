@@ -27,14 +27,18 @@
 .App-link {
   color: #61dafb;
 }
-.MuiDrawer-paper ,.MuiPaper-root {
+
+.MuiDrawer-paper,
+.MuiPaper-root {
   background-color: black;
-  color:white
+  color: white
 }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -46,36 +50,34 @@
   --headings-color: #000000;
   --box-shadow: none;
   --desc-color: #fff;
-  --drawer-bg-color:#000;
+  --drawer-bg-color: #000;
   --color: #ffffffbf;
-  --drawer-bg-color:#fff;
-  --paper-color:#e4d9d971;
+  --drawer-bg-color: #fff;
+  --paper-color: #e4d9d971;
 }
 
 
 
 body[data-theme="dark-theme"] {
-  --bg-color: linear-gradient(
-    to left bottom,
-    #001f2f,
-    #0d1727,
-    #131421,
-    #150f1b,
-    #130c15,
-    #100a10,
-    #0d0508,
-    #090000,
-    #0b0203,
-    #100308,
-    #130410,
-    #140410
-  );
+  --bg-color: linear-gradient(to left bottom,
+      #740404,
+      #6c0124,
+      #591337,
+      #421f3e,
+      #2d2439,
+      #2d2439,
+      #2d2439,
+      #2d2439,
+      #421f3e,
+      #591337,
+      #6c0124,
+      #740404);
   --headings-color: #000000;
   --box-shadow: none;
   --desc-color: #fff;
-  --drawer-bg-color:#000;
+  --drawer-bg-color: #000;
   --color: #ffffffbf;
-  --paper-color:#3f3d3dcb;
+  --paper-color: #3f3d3dcb;
 }
 
 body[data-theme="sea-theme"] {
@@ -83,26 +85,27 @@ body[data-theme="sea-theme"] {
   --headings-color: #fdeef6;
   --desc-color: #000000;
   --drawer-bg-color: #fdeef6;
-  --color: #000; 
+  --color: #000;
   --box-shadow: 0 0 2px gray;
-  --paper-color:#e4e4e4cb;
+  --paper-color: #e4e4e4cb;
 }
 
-body[data-theme="sharp-theme"] { 
---bg-color:  linear-gradient(to left, #9796f0, #fbc7d4);
---headings-color: linear-gradient(to left, #9796f0, #fbc7d4);
---desc-color: #000000;
---drawer-bg-color:linear-gradient(to left, #9796f0, #fbc7d4);
---color: #000;
---box-shadow: 0 0 5px gray;
---paper-color:#977d7dcb;
+body[data-theme="sharp-theme"] {
+  --bg-color: linear-gradient(to left, #9796f0, #fbc7d4);
+  --headings-color: linear-gradient(to left, #9796f0, #fbc7d4);
+  --desc-color: #000000;
+  --drawer-bg-color: linear-gradient(to left, #9796f0, #fbc7d4);
+  --color: #000;
+  --box-shadow: 0 0 5px gray;
+  --paper-color: #977d7dcb;
 }
 
 body {
   background: var(--bg-color) !important;
   background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
+  background-repeat: repeat-y;
+  min-height: 100vh;
+  
 }
 
 .content-container {
@@ -122,6 +125,7 @@ body {
   margin-bottom: 16px;
   color: var(--headings-color);
 }
+
 .select-theme-heading {
   color: var(--headings-color);
 }

@@ -49,7 +49,7 @@ const tableIcons = {
 
 
 
-export default function YearTable(props) {
+export default function GenderTable(props) {
   const [columns, setColumns] = useState([
     {
       title: "BPL#",
@@ -81,7 +81,7 @@ export default function YearTable(props) {
   return (
 <MaterialTable
 icons={tableIcons}
-title="Inserted Years"
+title="Inserted Gender"
 columns={columns}
 
 

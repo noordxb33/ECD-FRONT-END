@@ -7,18 +7,17 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import CancelIcon from '@mui/icons-material/Cancel';
 
 export default function MotherQualification(props) {
-
-
     return (
         <FormContainer
             defaultValues={{ MotherQualification: '' }}
             onSuccess={data => props.postRequest('/MotherQualification', data)}>
             <CssBaseline />
             <Grid container
-                sx={{
+                   sx={{
                     boxShadow: 5,
-                    width: '100%',
-                    height: '40vh',
+                    width: '80%',
+                    height: '80%',
+                    margin: '0 10%',
                     borderRadius: 3,
                     background: 'var(--bg-color)',
                     padding: 4,
