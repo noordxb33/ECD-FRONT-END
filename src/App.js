@@ -16,10 +16,14 @@ import Year from './Pages/Acessories/YearPage/Year';
 import MotherQualification from './Pages/Acessories/MotherQualification';
 import YearPage from './Pages/Acessories/YearPage/YearPage';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Fatheroccupition  from './Pages/Acessories/Fatheroccupition';
 // >>>>>>> a51f66881ba64b4b0614c84745942e031c9da29a
 =======
 >>>>>>> 5cf28e4d559b54d0e0d568427792acc1e921ddf5
+=======
+import Fatheroccupition  from './Pages/Acessories/Fatheroccupition';
+>>>>>>> parent of 5cf28e4 (Merge branch 'Team-B')
 import BatchesForm from './Pages/Acessories/BatchesForm';
 // import Month from './Pages/Acessories/Month';
 import SignIn from './Pages/Login/SignIn';
