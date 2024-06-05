@@ -259,6 +259,7 @@ export default function AddAdmission() {
                 required
               />
             </Grid>
+
             <Grid item xs={12} sm={6}>
               <FormControl fullWidth required>
                 <InputLabel>Gender</InputLabel>

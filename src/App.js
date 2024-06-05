@@ -8,6 +8,12 @@ import toast,{Toaster} from 'react-hot-toast';
 import Year from './Pages/Acessories/YearPage/Year';
 import MotherQualification from './Pages/Acessories/MotherQualification';
 import YearPage from './Pages/Acessories/YearPage/YearPage';
+<<<<<<< Updated upstream
+=======
+import Fatheroccupition  from './Pages/Acessories/Fatheroccupition';
+// >>>>>>> a51f66881ba64b4b0614c84745942e031c9da29a
+import Fatheroccupition  from './Pages/Acessories/Fatheroccupition';
+>>>>>>> Stashed changes
 import BatchesForm from './Pages/Acessories/BatchesForm';
 // import Month from './Pages/Acessories/Month';
 import SignIn from './Pages/Login/SignIn';
