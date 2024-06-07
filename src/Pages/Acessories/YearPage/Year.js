@@ -1,53 +1,28 @@
-import { Typography, CssBaseline, Divider, Grid, Stack } from '@mui/material'
-import React from 'react'
-import { ThemeProvider } from '@mui/system';
-import { FormContainer, TextFieldElement } from 'react-hook-form-mui';
-import Button from '@mui/material/Button';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import CancelIcon from '@mui/icons-material/Cancel';
+// import { Typography, CssBaseline, Divider, Grid, Stack } from '@mui/material'
+// import React from 'react'
+// import { ThemeProvider } from '@mui/system';
+// import { FormContainer, TextFieldElement } from 'react-hook-form-mui';
+// import Button from '@mui/material/Button';
+// import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+// import CancelIcon from '@mui/icons-material/Cancel';
 
 
-export default function YearPage(props){
 
-
-    return (
-        <Grid container>
-            <Year getRequest={props.getRequest} postRequest={props.postRequest}/>
-
-            <YearTable/>
-        </Grid>
-    
-    )
-}
-
-
-function Year(props) {
-
-
+export default function Year(props) {
     return (
         <FormContainer
             defaultValues={{ year: '' }}
-            onSuccess={data => props.postRequest('/Year', data)}>
+             onSuccess={data => props.postRequest('/Year', data)}
+        >
             <CssBaseline />
             <Grid container
-                sx={{
-                    boxShadow: 5,
-                    width: '100%',
-                    height: '40vh',
-                    borderRadius: 3,
-                    background: 'var(--bg-color)',
-                    padding: 4,
-                    color: 'var(--color)'
-                    // '&:hover': {
-                    //   bgcolor: 'primary.dark',
-                    // },
-                }}
+          
             >
                 <Grid item lg={6} xl={6} xs={12} sm={12} md={6}>
                     <Typography style={{ color: 'var(--desc-color)', widht: '100%' }} variant="h5" noWrap>
                         Please insert the records for the Gender Resource.
                     </Typography>
-                    <TextFieldElement
+                    <TextFieldElement 
                         sx={{
                             margin: 5,
                             width: '80%',
