@@ -1,7 +1,6 @@
 import './App.css';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import RouteComponent from './RouteComponent';
-import Gender from './Pages/Acessories/Gender';
 import Add_Addmission from './Pages/Admission/Add_Addmission';
 import axios from 'axios';
 import {APIADD} from './APIADD';
@@ -15,12 +14,8 @@ import toast,{Toaster} from 'react-hot-toast';
 import Year from './Pages/Acessories/YearPage/Year';
 import MotherQualification from './Pages/Acessories/MotherQualification';
 import YearPage from './Pages/Acessories/YearPage/YearPage';
-<<<<<<< HEAD
 import Fatheroccupition  from './Pages/Acessories/Fatheroccupition';
-// >>>>>>> a51f66881ba64b4b0614c84745942e031c9da29a
-=======
->>>>>>> 5cf28e4d559b54d0e0d568427792acc1e921ddf5
-import Fatheroccupition  from './Pages/Acessories/Fatheroccupition';
+>>>>>>> Stashed changes
 import BatchesForm from './Pages/Acessories/BatchesForm';
 // import Month from './Pages/Acessories/Month';
 import SignIn from './Pages/Login/SignIn';
@@ -105,6 +100,8 @@ function App(props) {
     <Route path="/Year" element={<RouteComponent Component={<YearPage getRequest={Get} postRequest={postRequest} />}/>}  />
 {/* >>>>>>> a51f66881ba64b4b0614c84745942e031c9da29a */}
     <Route path="/MotherQualification" element={<RouteComponent Component={<MotherQualification getRequest={Get} postRequest={postRequest} />}/>}  />
+   
+    
 
     </Routes>
     </BrowserRouter>
