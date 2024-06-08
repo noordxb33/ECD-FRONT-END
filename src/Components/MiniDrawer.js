@@ -46,11 +46,6 @@ const drawerWidth = 230;
 const openedMixin = (theme) => ({
   backgroundColor: 'var(--drawer-bg-color)',
   color: 'var(--color) !important',
-  borderRight: 'var(--border)',
-  boxShadow: 'var(--box-shadow)',
-  backgroundColor: 'var(--drawer-bg-color)',
-  color: 'var(--color) !important',
-  borderRight: 'var(--border)',
   width: drawerWidth,
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
@@ -66,9 +61,6 @@ const openedMixin = (theme) => ({
 const closedMixin = (theme) => ({
   backgroundColor: 'var(--drawer-bg-color)',
   color: `var(--color) !important`,
-  borderRight: 'var(--border)',
-  boxShadow: 'var(--box-shadow)',
-  borderRight: 'var(--border)',
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -109,7 +101,6 @@ const AppBar = styled(MuiAppBar, {
   background:'var(--headings-color)',
   color: 'var(--color)',
   boxShadow: 'var(--box-shadow)',
-  borderBottom: 'var(--border)',
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
@@ -338,7 +329,7 @@ const renderMobileMenu = (
       onClick:()=>setOpenFinance(!finance),
       state:finance,
       nestedItems: [
-        { text: 'Pay Fee', icon: <MailIcon />, onClick:()=>changeRoute('/Fee')},
+        { text: 'Pay Fee', icon: <MailIcon />},
         { text: 'List of Fee', icon: <MailIcon />,},
         // Add more nested items here
       ],
@@ -353,8 +344,15 @@ const renderMobileMenu = (
         { text: 'Year', icon: <MailIcon />, onClick:()=>changeRoute('/Year')},
         { text: 'Month', icon: <MailIcon />, onClick:()=>changeRoute('/Month')},
         { text: 'Occupations', icon: <MailIcon />, onClick:()=>changeRoute('/Occupations')},
+<<<<<<< HEAD
+// <<<<<<< Updated upstream
         { text: 'MotherQualification', icon: <MailIcon />, onClick:()=>changeRoute('/MotherQualification')},
+// =======
         { text: 'Batches', icon: <MailIcon />, onClick:()=>changeRoute('/Batches')},
+// >>>>>>> Stashed changes
+=======
+        { text: 'Batches', icon: <MailIcon />, onClick:()=>changeRoute('/Batches')},
+>>>>>>> a51f66881ba64b4b0614c84745942e031c9da29a
 
         // Add more nested items here
       ],
@@ -556,7 +554,7 @@ const renderMobileMenu = (
                 <List component="div" disablePadding>
                   {/*             Nested List will be here */}
                   {item.nestedItems.length>0 ? item.nestedItems.map((nestedItem, nestedIndex) => (
-                    <ListItemButton sx={{color:'var(--desc-color)', pl: 4 }} onClick={nestedItem.onClick}  key={nestedIndex} >
+                    <ListItemButton sx={{color:'var(--desc-color)'}} onClick={nestedItem.onClick}  key={nestedIndex} sx={{ pl: 4 }} >
                       <ListItemIcon sx={{color:'var(--desc-color)'}}> {nestedItem.icon}</ListItemIcon>
                       <ListItemText primary={nestedItem.text} />
                     </ListItemButton>

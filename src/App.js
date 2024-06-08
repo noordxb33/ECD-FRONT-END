@@ -1,15 +1,28 @@
 import './App.css';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import RouteComponent from './RouteComponent';
-import Gender from './Pages/Acessories/Gender';
-import BatchesForm from './Pages/Acessories/BatchesForm';
 import Add_Addmission from './Pages/Admission/Add_Addmission';
-import Year from './Pages/Acessories/Year';
 import axios from 'axios';
 import {APIADD} from './APIADD';
 import toast,{Toaster} from 'react-hot-toast';
+import Year from './Pages/Acessories/YearPage/Year';
 import MotherQualification from './Pages/Acessories/MotherQualification';
-import Fee from './Pages/Finance/Fee';
+import YearPage from './Pages/Acessories/YearPage/YearPage';
+<<<<<<< Updated upstream
+=======
+import Fatheroccupition  from './Pages/Acessories/Fatheroccupition';
+// >>>>>>> a51f66881ba64b4b0614c84745942e031c9da29a
+import Fatheroccupition  from './Pages/Acessories/Fatheroccupition';
+>>>>>>> Stashed changes
+import BatchesForm from './Pages/Acessories/BatchesForm';
+// import Month from './Pages/Acessories/Month';
+import SignIn from './Pages/Login/SignIn';
+
+// <<<<<<< HEAD
+// >>>>>>> Stashed changes
+// =======
+
+// >>>>>>> a51f66881ba64b4b0614c84745942e031c9da29a
 function App(props) {
 
     //Creating A default Request For Log In
@@ -69,14 +82,16 @@ function App(props) {
     <BrowserRouter>
     <Routes>
 
+    <Route path="/Login" element={<RouteComponent Component={<SignIn/>}/>} exact />
     <Route path="/" element={<RouteComponent Component={<>HomePage</>}/>} exact />
     <Route path="/Add-Admission" element={<RouteComponent Component={<Add_Addmission/>}/>} exact />
     <Route path="/List-Admission" element={<RouteComponent Component={<>HomePage</>}/>} exact />
     <Route path="/Gender" element={<RouteComponent Component={<Gender/>}/>}  />
     <Route path="/Batches" element={<RouteComponent Component={<BatchesForm  getRequest={Get} postRequest={postRequest}/>}/>}  />
-    <Route path="/Year" element={<RouteComponent Component={<Year getRequest={Get} postRequest={postRequest} />}/>}  />
+    <Route path="/Year" element={<RouteComponent Component={<YearPage getRequest={Get} postRequest={postRequest} />}/>}  />
     <Route path="/MotherQualification" element={<RouteComponent Component={<MotherQualification getRequest={Get} postRequest={postRequest} />}/>}  />
-    <Route path="/Fee" element={<RouteComponent Component={<Fee getRequest={Get} postRequest={postRequest} />}/>}  />
+   
+    
 
     </Routes>
     </BrowserRouter>
